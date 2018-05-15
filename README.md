@@ -1,2 +1,3 @@
-# reduxInstagram
-Redux Application with a similar functionality of Instagram
+Redux Instagram Application
+
+npm install -> npm start
