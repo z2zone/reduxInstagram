@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';	
+
 
 class PhotoGrid extends Component {
 	
@@ -7,15 +9,27 @@ class PhotoGrid extends Component {
 		super(props);
 	}
 
+	renderPosts(){
+		return(
+			<div class="grid-box">
+				this.props.posts
+			</div>
+		);
+	}
+
 	render(){
 		return(
-			<div>
-				<h1>
-					<Link to="/">Instagrams</Link>
-				</h1>
+			<div class="photo-grid">
+				{this.renderPosts}
 			</div>
 		);
 	}
 }
 
-export default PhotoGrid;
+
+function mapStateToProps(state) {
+	return {
+		posts: state.posts		
+	}
+}
+export default connect(mapStateToProps)(PhotoGrid);
