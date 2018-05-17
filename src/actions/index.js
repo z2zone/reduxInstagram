@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POST = 'FETCH_POST';
-export const INCREASE_LIKE = 'INCREASE_LIKE';
+export const ADD_POST = 'ADD_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 
@@ -25,9 +25,10 @@ export function fetchPost (id) {
 	}
 }
 
-export function increaseLike(id) {
+export function addPost(id, callback) {
+	const requst = axios.post(`${ROOT_URL}/posts${API_KEY}`);
 	return {
-		type: INCREASE_LIKE,
+		type: ADD_POST,
 		payload: post
 	}
 }

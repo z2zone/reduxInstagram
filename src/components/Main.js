@@ -15,6 +15,7 @@ class Main extends Component {
 				<h1>
 					<Link to="/">Instagrams</Link>
 				</h1>
+				<Link className="button add-new" to="/posts/new">Add New Post</Link>
 				<PhotoGrid />
 			</div>
 			

@@ -17,14 +17,14 @@ class PhotoGrid extends Component {
 				<div className="grid-figure" key={post.title}>
 					<img className="" src ={post.categories} />
 					<span className="title">{post.title}</span>
-					<Link className="button" to={`/${post.id}`}>View</Link>
+					<Link className="button" to={`posts/${post.id}`}>View</Link>
 				</div>
 			);
 		})
 	}
 
 	render(){
-		console.log(this.props.posts);
+		// console.log(this.props.posts);
 		return(
 			<div className="photo-grid">
 				{this.renderPosts()}

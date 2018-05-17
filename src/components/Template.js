@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 // import PhotoGrid from './PhotoGrid';
 import Main from './Main';
 import Show from './Show';
+import AddPost from './AddPost';
 
 
 class Template extends Component {
@@ -10,10 +11,11 @@ class Template extends Component {
     return (
     	<BrowserRouter>
     		<div id="wrapper">
-                <switch>
+                <Switch>
+                    <Route exact path="/posts/new" component={AddPost} />
+                    <Route exact path="/posts/:id" component={Show} />
                     <Route exact path="/" component={Main} />
-                    <Route exact path="/:id" component={Show} />
-                </switch>		
+                </Switch>		
     		</div>
     	</BrowserRouter>
     );

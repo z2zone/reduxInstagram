@@ -1,6 +1,8 @@
  html {
 	 font-size: 10px;
 	 font-family: 'Lato', sans-serif;
+	 -webkit-text-size-adjust: 100%;
+	 -ms-text-size-adjust: 100%;
 }
  p {
 	 font-size: 1.6rem;
@@ -24,61 +26,18 @@
 }
  h1 a {
 	 color: #125688;
+	 transition: all 0.2s;
 	 text-decoration: none;
 }
  h1 a:focus {
 	 outline: 0;
-}
-
- html {
-	 font-family: 'Lato', sans-serif;
-	 -webkit-text-size-adjust: 100%;
-	 -ms-text-size-adjust: 100%;
 }
  a:focus {
 	 outline: thin dotted;
 }
  a:active, a:hover {
 	 outline: 0;
-}
- abbr[title] {
-	 border-bottom: 1px dotted;
-}
- b, strong {
-	 font-weight: 700;
-}
- dfn {
-	 font-style: italic;
-}
- mark {
-	 background: #ff0;
-	 color: #000;
-}
- code, kbd, pre, samp {
-	 font-family: monospace, serif;
-	 font-size: 1em;
-}
- pre {
-	 white-space: pre-wrap;
-	 word-wrap: break-word;
-}
- q {
-	 quotes: 2 1C 2 1D 2 18 2 19;
-}
- small {
-	 font-size: 80%;
-}
- sub, sup {
-	 font-size: 75%;
-	 line-height: 0;
-	 position: relative;
-	 vertical-align: baseline;
-}
- sup {
-	 top: -0.5em;
-}
- sub {
-	 bottom: -0.25em;
+	 text-decoration: none;
 }
  img {
 	 border: 0;
@@ -156,7 +115,13 @@ body {
 }
 
 /*Elements style*/
-
+ #wrapper {
+ 	 margin: 0 auto;
+ 	 max-width: 1200px;
+ }
+ .wrapper {
+ 	text-align: right;
+ }
  .photo-grid {
 	 display: flex;
 	 flex-wrap: wrap;
@@ -245,17 +210,10 @@ body {
 	 color: #509dd6;
 	 padding: 15px;
 }
- .likes-heart {
-	 background: url("http://f.cl.ly/items/3Y373q2Q3J3Y1j203n0m/Bitmap-3.png") center no-repeat;
-	 background-size: contain;
-	 font-size: 2rem;
-	 padding: 1rem;
-	 position: absolute;
-	 color: #00f;
-	 left: 50%;
-	 top: 50%;
-	 pointer-events: none;
-}
+a.button.add-new {
+    position: relative;
+    bottom: 3em;
+    right: 1em;
 }
 /* Buttons */
  .control-buttons {
@@ -283,7 +241,11 @@ body {
 	 color: #509dd6;
 	 outline: 0;
 }
+ h1 a:hover {
 
+	 color: #509dd6;
+	 text-decoration: none;
+}
 /* Cowboy style speech bubble - you should probably use an SVG for this if you are doing more icons. */
 
  .speech-bubble {
@@ -306,24 +268,3 @@ body {
 	 top: 30%;
 	 left: 0;
 }
-
-/*Animations*/
-
-.likes-heart {
-	 opacity: 0;
-	 transition: all 0.5s;
-	 transform: translateX(-50%) translateY(-50%) scale(5);
-	 display: block;
-}
- .likes-heart.like-enter {
-	 transition: all 0.2s;
-	 transform: translateX(-50%) translateY(-50%) scale(1);
-	 opacity: 1;
-}
- .likes-heart.like-enter.like-enter-active {
-	 transform: translateX(-50%) translateY(-50%) scale(5);
-}
- .likes-heart .like-leave-active {
-	 display: none;
-}
- 
