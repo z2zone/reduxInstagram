@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';	
-import _ from "lodash";
+import _ from 'lodash';
 import { fetchPosts } from '../actions/index';	
 
 
@@ -9,21 +9,22 @@ class PhotoGrid extends Component {
 	
 	componentDidMount(){
 		this.props.fetchPosts();
-		console.log(this.props.posts);
 	}
 
 	renderPosts(){
-		return
-		_.map(this.props.posts, (post)=>{
+		return _.map(this.props.posts, (post)=>{
 			return (
-				<div className="gird-box">
-					<img src={post.categories} alt=""/>
+				<div className="grid-figure" key={post.title}>
+					<img className="" src ={post.categories} />
+					<span className="title">{post.title}</span>
+					<Link className="button" to={`/${post.id}`}>View</Link>
 				</div>
 			);
 		})
 	}
 
 	render(){
+		console.log(this.props.posts);
 		return(
 			<div className="photo-grid">
 				{this.renderPosts()}
@@ -39,4 +40,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { fetchPosts })(PhotoGrid);
+export default connect(mapStateToProps, {fetchPosts})(PhotoGrid);
