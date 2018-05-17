@@ -11,11 +11,11 @@ class Main extends Component {
 
 	render() {
 		return (
-			<div class="wrapper">
+			<div className="wrapper">
 				<h1>
 					<Link to="/">Instagrams</Link>
 				</h1>
-				<PhotoGrid />\
+				<PhotoGrid />
 			</div>
 			
 		);
