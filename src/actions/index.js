@@ -19,14 +19,21 @@ export function fetchPosts () {
 }
 
 export function fetchPost (id) {
+	const request = axios.get(`${ROOT_URL}/posts${API_KEY}/${id}`);
+
 	return {
 		type: FETCH_POST,
-		payload: post
+		payload: request
 	}
 }
 
-export function addPost(id, callback) {
-	const requst = axios.post(`${ROOT_URL}/posts${API_KEY}`);
+export function addPost(values, callback) {
+	const requst = 
+		axios.post(`${ROOT_URL}/posts${API_KEY}`, values)
+		.then(()=>{
+			callback();
+		})
+	
 	return {
 		type: ADD_POST,
 		payload: post

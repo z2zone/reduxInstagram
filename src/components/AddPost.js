@@ -7,7 +7,7 @@ import { addPost } from '../actions';
 class AddPost extends Component {
 
 	renderForm(field) {
-		const classForm = `form-control ${field.meta.touched && field.meta.error ? 'is-invalid' : '' }`;
+		const classForm = `form-control ${field.meta.touched && field.meta.error ? 'is-invalid' : ''}`;
 		return (
 			<div className="form-group">
 				<label>{field.labelForm}</label>
@@ -24,7 +24,10 @@ class AddPost extends Component {
 	}
 
 	onFormSubmit(values) {
-		console.log(values);
+		this.props.addPost(values, ()=>{
+			this.props.history.push('/');
+			// programmatic navigation: push to homepage after axio reqeust has been solved
+		});
 	}
 
 	render() {
@@ -52,8 +55,10 @@ class AddPost extends Component {
 						name='URL'
 						component={this.renderForm}
 					/>
-					<button className="btn btn-primary" type="submit">Add a Post</button>
-					<button className="btn btn-danger" type="">Cancel</button>
+					<div className="text-center">
+						<button className="btn btn-primary" type="submit">Add a Post</button>
+						<Link className="btn btn-danger" to="/">Cancel</Link>
+					</div>
 				</form>
 			</div>
 		);
@@ -62,6 +67,7 @@ class AddPost extends Component {
 
 function validate(values) {
 	const errors = {};
+	
 	if (!values.title) {
 		errors.title = "You haven't entered a title";
 	}
