@@ -215,6 +215,12 @@ a.button.add-new {
     bottom: 3em;
     right: 1em;
 }
+.form-group label {
+	font-size: 1.4em;
+}
+.invalid-feedback {
+	font-size: 1.2em;
+}
 /* Buttons */
  .control-buttons {
 	 display: flex;
@@ -241,10 +247,34 @@ a.button.add-new {
 	 color: #509dd6;
 	 outline: 0;
 }
+.btn-primary {
+	 background: #125688;
+	 border: none;
+	 padding: 0.8em 2em;
+     font-size: 1.2em;
+}
+.btn-danger {
+	 padding: 0.8em 2em;
+     font-size: 1.2em;	
+	 border: none;
+}
+.btn-primary:hover {
+     color: #fff;
+     background-color: #509dd6;
+     border: none;
+}
+.btn-danger:hover {
+     color: #fff;
+     border: none;
+}
+.add-new {
+	 max-width: 1000px;
+	 margin: 0 auto
+}
  h1 a:hover {
-
 	 color: #509dd6;
 	 text-decoration: none;
+}
 }
 /* Cowboy style speech bubble - you should probably use an SVG for this if you are doing more icons. */
 
