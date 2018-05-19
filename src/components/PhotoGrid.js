@@ -24,7 +24,7 @@ class PhotoGrid extends Component {
 	}
 
 	render(){
-		// console.log(this.props.posts);
+		console.log(this.props.posts);
 		return(
 			<div className="photo-grid">
 				{this.renderPosts()}

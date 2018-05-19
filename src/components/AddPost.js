@@ -46,15 +46,16 @@ class AddPost extends Component {
 						component={this.renderForm}
 					/>
 					<Field
+						labelForm='Image URL for the Post'
+						name='categories'
+						component={this.renderForm}
+					/>
+					<Field
 						labelForm='Content for the Post'
 						name='content'
 						component={this.renderForm}
 					/>
-					<Field
-						labelForm='Image URL for the Post'
-						name='URL'
-						component={this.renderForm}
-					/>
+					
 					<div className="text-center">
 						<button className="btn btn-primary" type="submit">Add a Post</button>
 						<Link className="btn btn-danger" to="/">Cancel</Link>
@@ -67,15 +68,15 @@ class AddPost extends Component {
 
 function validate(values) {
 	const errors = {};
-	
+
 	if (!values.title) {
 		errors.title = "You haven't entered a title";
 	}
 	if (!values.content) {
 		errors.content = "You haven't entered a content";
 	}
-	if (!values.URL || values.URL.length < 10) {
-		errors.URL = "You haven't entered a proper URL";
+	if (!values.categories || values.categories.length < 10) {
+		errors.categories = "You haven't entered a proper URL";
 	}
 
 	return errors;
@@ -89,5 +90,5 @@ export default reduxForm({
 
 //first argument of reduxForm function acts as sort of like a namespace. 
 
-// Flow: User puts something in the forms -> handleSubmit from reduxForm -> run through validate function 
+// Flow: User puts something in the forms -> run through validate function -> handleSubmit from reduxForm 
 // everything checksout -> then onFormSubmit (custom function written by me)

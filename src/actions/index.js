@@ -4,7 +4,7 @@ export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POST = 'FETCH_POST';
 export const ADD_POST = 'ADD_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
-export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const DELETE_POST = 'DELETE_POST';
 
 const ROOT_URL = 'http://reduxblog.herokuapp.com/api';
 const API_KEY = '?key=reduxInsta';
@@ -19,7 +19,7 @@ export function fetchPosts () {
 }
 
 export function fetchPost (id) {
-	const request = axios.get(`${ROOT_URL}/posts${API_KEY}/${id}`);
+	const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`);
 
 	return {
 		type: FETCH_POST,
@@ -28,15 +28,27 @@ export function fetchPost (id) {
 }
 
 export function addPost(values, callback) {
-	const requst = 
-		axios.post(`${ROOT_URL}/posts${API_KEY}`, values)
+	const request = 
+		axios
+		.post(`${ROOT_URL}/posts${API_KEY}`, values)
 		.then(()=>{
 			callback();
 		})
 	
 	return {
 		type: ADD_POST,
-		payload: post
+		payload: request
+	}
+}
+
+export function deletePost (id, callback) {
+	const request = axios
+		.delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
+		.then(()=>{callback()});
+
+	return {
+		type: DELETE_POST,
+		payload: id
 	}
 }
 
@@ -47,9 +59,3 @@ export function addComment (id) {
 	}	
 }
 
-export function deleteComment (id) {
-	return {
-		type: DELETE_COMMENT,
-		payload: post
-	}
-}

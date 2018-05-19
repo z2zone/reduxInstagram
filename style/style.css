@@ -229,8 +229,8 @@ body {
 }
 a.button.add-new {
     position: relative;
-    bottom: 3em;
-    right: 1em;
+    bottom: 4em;
+    right: 1.3em;
 }
 .form-group label {
 	font-size: 1.4em;
@@ -291,27 +291,4 @@ a.button.add-new {
  h1 a:hover {
 	 color: #509dd6;
 	 text-decoration: none;
-}
-}
-/* Cowboy style speech bubble - you should probably use an SVG for this if you are doing more icons. */
-
- .speech-bubble {
-	 width: 1.5rem;
-	 height: 1.25rem;
-	 background: #00f;
-	 display: inline-block;
-	 border-radius: 50%;
-	 position: relative;
-}
- .speech-bubble:after {
-	 display: inline-block;
-	 position: absolute;
-	 content: '';
-	 width: 0;
-	 height: 0;
-	 border-style: solid;
-	 border-width: 0 1.25rem 1.25rem 0;
-	 border-color: transparent #00f transparent transparent;
-	 top: 30%;
-	 left: 0;
 }
