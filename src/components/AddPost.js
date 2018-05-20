@@ -9,11 +9,30 @@ class AddPost extends Component {
 	renderForm(field) {
 		const classForm = `form-control ${field.meta.touched && field.meta.error ? 'is-invalid' : ''}`;
 		return (
+			// console.log(field);
 			<div className="form-group">
 				<label>{field.labelForm}</label>
 				<input
 					className={classForm}
 					type="text"
+					{...field.input}
+				/>
+				<div className="invalid-feedback">
+					{field.meta.touched ? field.meta.error : ''}
+				</div>
+			</div>
+		);
+	}
+
+	renderContentForm(field) {
+		const classForm = `form-control ${field.meta.touched && field.meta.error ? 'is-invalid' : ''}`;
+		return (
+			// console.log(field);
+			<div className="form-group">
+				<label>{field.labelForm}</label>
+				<textarea
+					className={classForm}
+					type="textarea"
 					{...field.input}
 				/>
 				<div className="invalid-feedback">
@@ -53,7 +72,7 @@ class AddPost extends Component {
 					<Field
 						labelForm='Content for the Post'
 						name='content'
-						component={this.renderForm}
+						component={this.renderContentForm}
 					/>
 					
 					<div className="text-center">
@@ -68,7 +87,7 @@ class AddPost extends Component {
 
 function validate(values) {
 	const errors = {};
-	
+
 
 	if (!values.title) {
 		errors.title = "You haven't entered a title";

@@ -1,19 +1,31 @@
- html {
-	 font-size: 10px;
-	 font-family: 'Lato', sans-serif;
-	 -webkit-text-size-adjust: 100%;
-	 -ms-text-size-adjust: 100%;
-}
- p {
-	 font-size: 1.6rem;
-	 line-height: 1.5;
-}
  @font-face {
 	 font-family: 'billabongregular';
 	 src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot");
 	 src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix") format('embedded-opentype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.woff") format('woff'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.ttf") format('truetype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.svg#billabongregular") format('svg');
 	 font-weight: normal;
 	 font-style: normal;
+}
+ * {
+	 -moz-box-sizing: border-box;
+	 -webkit-box-sizing: border-box;
+	 box-sizing: border-box;
+}
+ html {
+	 font-size: 10px;
+	 font-family: 'Lato', sans-serif;
+	 -webkit-text-size-adjust: 100%;
+	 -ms-text-size-adjust: 100%;
+} 
+ body {
+	 background: offwhite;
+}
+ img {
+	 max-width: 100%;
+	 border: 0;
+}
+ p {
+	 font-size: 1.6rem;
+	 line-height: 1.5;
 }
  h1 {
 	 font-family: billabongregular;
@@ -56,11 +68,8 @@
 	 outline: 0;
 	 text-decoration: none;
 }
- img {
-	 border: 0;
-}
- svg:not(:root) {
-	 overflow: hidden;
+ textarea{
+	 min-height: 10em;
 }
  fieldset {
 	 border: 1px solid #c0c0c0;
@@ -110,26 +119,6 @@
 	 border: 0;
 	 padding: 0;
 }
- .clearfix:after {
-	 visibility: hidden;
-	 display: block;
-	 font-size: 0;
-	 content: " ";
-	 clear: both;
-	 height: 0;
-}
- * {
-	 -moz-box-sizing: border-box;
-	 -webkit-box-sizing: border-box;
-	 box-sizing: border-box;
-}
- img {
-	 max-width: 100%;
-}
- 
-body {
-	 background: offwhite;
-}
 
 /*Elements style*/
  #wrapper {
@@ -157,66 +146,11 @@ body {
 	 box-shadow: 0 0 0 5px rgba(0,0,0,0.03);
 	 position: relative;
 }
- .single-photo {
-	 max-width: 900px;
-	 margin: 0 auto;
-	 display: flex;
-	 background: #fff;
-}
- .single-photo .grid-figure {
-	 box-shadow: none;
-	 margin: 0 2rem 0 0;
-	 border: 0;
-	 padding: 0;
-	 flex: 1 0 60%;
-	 max-width: 60%;
-}
- .single-photo .comments {
-	 flex: 1 0 40%;
-	 max-width: 40%;
-}
- .single-photo .grid-photo {
-	 width: 100%;
-	 margin: 0;
-}
  .grid-photo {
 	 width: calc(100% + 4rem);
 	 margin-left: -2rem;
 	 margin-top: -2rem;
 	 max-width: none;
-}
- .remove-comment {
-	 background: none;
-	 border: 0;
-	 line-height: 1;
-	 opacity: 0;
-}
- .remove-comment:hover {
-	 color: #f00;
-}
- .comment {
-	 border-bottom: 1px solid #d3d3d3;
-	 padding: 0.5rem 0;
-}
- .comment p {
-	 font-size: 1.2rem;
-	 margin: 0;
-}
- .comment strong {
-	 color: #00f;
-	 margin-right: 5px;
-}
- .comment:hover .remove-comment {
-	 opacity: 1;
-}
- .comment-form input, .comment-form textarea {
-	 width: 100%;
-	 border: 0;
-	 font-size: 1.3rem;
-	 padding: 1rem 0;
-	 border-bottom: 1px solid #d3d3d3;
-	 outline: none;
-	 resize: vertical;
 }
  .grid-photo-wrap {
 	 position: relative;
@@ -227,42 +161,21 @@ body {
 	 color: #509dd6;
 	 padding: 15px;
 }
-a.button.add-new {
-    position: relative;
-    bottom: 4em;
-    right: 1.3em;
-}
 .form-group label {
-	font-size: 1.4em;
+	 font-size: 1.4em;
 }
 .invalid-feedback {
-	font-size: 1.2em;
+	 font-size: 1.2em;
 }
+ h1 a:hover {
+	 color: #509dd6;
+	 text-decoration: none;
+}
+
 /* Buttons */
  .control-buttons {
 	 display: flex;
 	 justify-content: space-between;
-}
- button, .button {
- 	 border: 2px solid #fff;
-	 background: #509dd6;
-	 flex-basis: 48%;
-	 display: inline-block;
-	 line-height: 2;
-	 text-decoration: none;
-	 margin: 10px;
-	 padding: 0px 20px;
-	 text-align: center;
-	 font-size: 15px;
-	 color: #fff;
-	 transition: all 0.2s;
-	 box-sizing: border-box;
-}
- button:hover, .button:hover, button:focus, .button:focus {
- 	 border: 2px solid #509dd6;
-	 background: #fff;
-	 color: #509dd6;
-	 outline: 0;
 }
 .btn-primary {
 	 background: #125688;
@@ -288,7 +201,29 @@ a.button.add-new {
 	 max-width: 1000px;
 	 margin: 0 auto
 }
- h1 a:hover {
-	 color: #509dd6;
+ button, .button {
+ 	 border: 2px solid #fff;
+	 background: #509dd6;
+	 flex-basis: 48%;
+	 display: inline-block;
+	 line-height: 2;
 	 text-decoration: none;
+	 margin: 10px;
+	 padding: 0px 20px;
+	 text-align: center;
+	 font-size: 15px;
+	 color: #fff;
+	 transition: all 0.2s;
+	 box-sizing: border-box;
+}
+ button:hover, .button:hover, button:focus, .button:focus {
+ 	 border: 2px solid #509dd6;
+	 background: #fff;
+	 color: #509dd6;
+	 outline: 0;
+}
+a.button.add-new {
+     position: relative;
+     bottom: 4em;
+     right: 1.3em;
 }

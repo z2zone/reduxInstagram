@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-// import PhotoGrid from './PhotoGrid';
 import Main from './Main';
 import PostShow from './PostShow';
 import AddPost from './AddPost';
