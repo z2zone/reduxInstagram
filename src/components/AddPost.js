@@ -68,6 +68,7 @@ class AddPost extends Component {
 
 function validate(values) {
 	const errors = {};
+	
 
 	if (!values.title) {
 		errors.title = "You haven't entered a title";
